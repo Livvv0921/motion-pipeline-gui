@@ -1,0 +1,11 @@
+Motion Pipeline GUI v0.5.1 — focused Compare Lab update
+
+- Added Plot mode: Overlay / Stacked vertically.
+- Stacked mode gives each trace its own row with a shared X axis.
+- Stacked rows use the same true-value Y range so amplitudes/noise remain comparable across dates; values are not normalized or offset.
+- Added editable Y-axis label.
+- "Show trace labels / legend" can hide the overlay legend or the stacked right-edge session labels.
+- CSV sources now default to a session label extracted from a timestamp such as 20260731_111816 in the recording folder two levels above the CSV.
+- Manual trace renaming remains available.
+- Updated Compare Lab Quick Help.
+- No changes to Peak Lab, Movement Lab, calibration, triangulation, or backend environment handling.

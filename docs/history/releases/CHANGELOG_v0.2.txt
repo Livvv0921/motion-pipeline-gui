@@ -1,0 +1,24 @@
+Motion Pipeline GUI v0.2 — interface / Peak Lab pass
+
+UI
+- Added Embers palette (#41436A, #984063, #F64668, #FE9677).
+- Added remembered dark/light themes.
+- Controls/buttons prefer Futura when installed; fall back to Futura PT/Avenir Next/Segoe UI.
+- Kept major page headings in Courier New.
+- Added collapsible sidebar (Ctrl+B) and always-visible top utility bar.
+- Added searchable context-sensitive Quick Help (Ctrl+H).
+- Made run actions right-aligned and visually prominent.
+
+Peak Lab
+- Reorganized into compact left controls + large plot + event table.
+- Default view shows one Z trace instead of all XYZ traces.
+- Added Hover Details on/off.
+- Added Overview Slider on/off (default off).
+- Added explicit PICK RANGE ON PLOT mode.
+- Removed Plotly title/legend collision and peak text labels.
+- Fixed stale/misaligned peak markers by filtering to current bodypart/axis and recomputing marker Y from the loaded dataframe.
+- FIND PEAKS now writes candidates directly to the event table.
+- Added click-to-reposition workflow: select one row -> MOVE SELECTED PEAK -> click corrected frame on graph.
+- Removed peak_type, source_file, and data_version from event table/export.
+- Disabled alternating table row colors.
+- Old v0.1 Peak Lab session JSON files remain readable; removed columns are ignored.

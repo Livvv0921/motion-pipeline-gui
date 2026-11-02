@@ -1,0 +1,33 @@
+Motion Pipeline GUI v0.5.5
+==========================
+
+Peak Lab / Event Dataset
+- Event indices are now numbered chronologically within event_label + bodypart + primary_axis.
+- Event table rows are automatically ordered by label/bodypart/axis/frame instead of showing appended detection batches out of chronological order.
+- Re-running FIND PEAKS on an overlapping range replaces overlapping unconfirmed auto/draft batches for the same signal instead of stacking duplicate drafts.
+- Manual events are confirmed immediately and inserted into their chronological table position.
+- Added a visible `✓ CONFIRM KEPT` button beside the Event Dataset controls to confirm all checked draft rows before export.
+- Added Primary axis = None for view-only multi-axis inspection. FIND PEAKS/manual addition asks for X/Y/Z when None is selected.
+- Quick Help now documents the practical review workflow: identify/select the peak row, uncheck Keep to reject false peaks, use Frame + MOVE SELECTED PEAK to reposition, and use ADD MANUAL FRAME for missed events.
+
+Compare Lab
+- Graph title now supplies the default PNG filename for both the Plotly camera export and `EXPORT FULL FIGURE PNG`.
+- Horizontal splitter sizing was hardened so the left Compare Lab control panel keeps a safe minimum width and does not become clipped under the Plotly pane when the divider is dragged left.
+
+Filters / Pipeline
+- Passive Reading filter controls now default OFF.
+- Added optional Savitzky–Golay and Butterworth low-pass filters at the 2D DLC prediction stage, saved as separate `*_savgol.h5` and `*_butterworth.h5` files.
+- Triangulation and Visualization now understand raw, median, arima, savgol, and butterworth versions.
+- Filtered versions are unchecked by default in Triangulation and Visualization; raw remains selected.
+- Peak Lab's existing 3D Savitzky–Golay and Butterworth cleanup remains available independently.
+
+Console
+- Bottom-docked backend console can now expand to roughly half of the main GUI height, while the central page is allowed to yield vertical space.
+
+macOS
+- Backend interpreter detection now recognizes macOS/Linux `<env>/bin/python` paths.
+- Added `setup_macos.command`, `run_gui.command`, `requirements-gui-macos.txt`, and `MACOS_SETUP_v0.5.5.md`.
+- Windows-specific DLL isolation remains Windows-only and is skipped automatically on macOS.
+
+Testing
+- Added `TEST_SHEET_v0.5.5.md` with repeatable smoke/regression tests for all major pages and the new features.

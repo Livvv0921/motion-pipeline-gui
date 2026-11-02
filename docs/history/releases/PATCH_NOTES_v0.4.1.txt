@@ -1,0 +1,16 @@
+Motion Pipeline GUI v0.4.1 hotfix
+=================================
+
+Fixes startup crash in v0.4:
+    NameError: name 'Qt' is not defined
+
+Cause:
+The new scrollable Triangulation 3D Settings panel used
+Qt.ScrollBarPolicy.ScrollBarAlwaysOff, but motion_gui/pages.py did not
+import Qt from PySide6.QtCore.
+
+Fix:
+    from PySide6.QtCore import QSettings, QUrl, Qt
+
+No processing logic, saved settings, environment handling, Peak Lab, or
+Movement Lab behavior was intentionally changed in this hotfix.

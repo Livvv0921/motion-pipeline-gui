@@ -1,0 +1,7 @@
+# Install these in the Python environment selected for Passive Reading.
+# Keep your lab's tested DeepLabCut/PyTorch versions if they differ from the generic package below.
+deeplabcut
+pandas
+numpy
+scipy
+tables

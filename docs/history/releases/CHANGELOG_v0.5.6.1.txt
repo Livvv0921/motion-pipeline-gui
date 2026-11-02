@@ -1,0 +1,49 @@
+Motion Pipeline GUI v0.5.6.1
+=============================
+
+This is a UI/bug-fix release on top of v0.5.6.
+
+1. Movement Lab theme-aware traces
+----------------------------------
+- Movement Lab no longer needs a palette selector.
+- Light mode uses darker, high-contrast X/Y/Z traces.
+- Dark mode uses brighter X/Y/Z traces.
+- The synchronized video cursor uses a theme-visible accent.
+
+2. Peak Lab layout correction
+-----------------------------
+- "Primary trace on top" is restored to the original single-canvas Peak Lab style.
+- X/Y/Z remain in one plot; the selected primary trace is drawn last, thicker, and fully opaque.
+- "Separate XYZ" is now the only Peak Lab mode that creates individual subplots.
+
+3. Full-width controls + responsive plots
+-----------------------------------------
+- Peak Lab: added HIDE CONTROLS / SHOW CONTROLS.
+- Compare Lab: added HIDE CONTROLS / SHOW CONTROLS.
+- Hiding controls gives the plot the full available width.
+- Peak Lab and Compare Lab Plotly views now fill the available QWebEngine viewport height.
+- Removed fixed embedded plot heights that could leave a blank strip below stacked/subplot views.
+- Plotly is explicitly resized after the controls panel is shown/hidden and when the embedded viewport changes size.
+
+4. Revised light theme
+----------------------
+- Warm blush base: #EECCC1
+- Blush panel/accent surface: #FAC9D5
+- Purple action accent: #9650A8
+- Deep burgundy text/focus: #430923
+- Teal secondary accent: #0F969F
+- The incomplete color #FAC9D supplied during design review was interpreted as #FAC9D5.
+- The default light-mode plot traces were also adjusted for stronger contrast.
+
+5. Triangulation quality-of-life fixes
+--------------------------------------
+- Calibration camera-count parsing now accepts multiple common Aniposelib TOML layouts instead of only a top-level list.
+- If selected 3D CSV/NPY outputs already exist and overwrite is OFF, the GUI now stops before launching the backend and shows a clear "3D output already exists" message instead of producing a scary failure traceback.
+
+6. Movement Lab raw-video matching safety
+-----------------------------------------
+- Automatic raw-video matching now requires an exact YYYYMMDD_HHMMSS recording token match.
+- Loose substring guessing is no longer used.
+- If multiple exact matches are found, Movement Lab asks the user to choose manually instead of silently selecting one.
+
+Version: 0.5.6.1

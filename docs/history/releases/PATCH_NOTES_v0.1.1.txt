@@ -1,0 +1,13 @@
+Motion Pipeline GUI v0.1.1
+Date: 2026-08-13
+
+Fixes
+-----
+- Fixed startup crash: TypeError from int(None) at passive/shuffle.
+- Root cause: the write-only remember() helper was accidentally used when initializing saved settings.
+- All startup reads now use remembered().
+- remembered() now falls back to its provided default if QSettings returns None.
+- Audited the same setting initialization pattern on Passive, Calibration, Triangulation, and Visualization pages.
+- Re-ran Python compile checks across the project.
+
+No scientific/backend processing logic was changed in this patch.

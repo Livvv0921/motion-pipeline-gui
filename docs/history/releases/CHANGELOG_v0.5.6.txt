@@ -1,0 +1,55 @@
+Motion Pipeline GUI v0.5.6
+==========================
+
+Workflow / triangulation
+------------------------
+- Added a clear trial-folder reminder: select the processed trial folder containing DLC H5 files, not trial_folder/3d.
+- Added an explicit warning when the selected triangulation trial folder itself is named "3d".
+- Score-threshold spinner now changes in 0.1 increments while preserving manual decimal entry.
+- Adjusted central/dock sizing so the movable backend console resizes the page instead of visually competing with the triangulation footer.
+
+Theme / palettes
+----------------
+- Light mode now uses #DCD6E2 as the application background with #443959 and #1D7B80 interaction accents.
+- Added shared named trace palettes used consistently by Peak Lab and Compare Lab:
+  * Classic — Blue / Coral / Pink
+  * Plum — Lavender / Teal
+  * Electric — Blue / Lime / Brown
+  * Neon — Violet / Cyan / Blue
+  * Forest — Mint / Slate / Olive
+- The Plum/Lavender/Teal set uses a darker lavender trace in light mode so it remains visible against the #DCD6E2 background.
+
+Peak Lab
+--------
+- Added three trace layouts: Overlay, Separate XYZ, and Primary trace on top.
+- Removed the misleading "Anipose-style" visualization wording from the GUI.
+- Added shared trace-palette selection.
+- All X/Y/Z traces are visible by default; Primary trace on top is the new default layout.
+- Preserves the current Plotly x zoom across selection, moving, removing, detection redraws, and most other Peak Lab edits. FULL RANGE intentionally clears the remembered zoom.
+- Table-row selection no longer rebuilds the Plotly page, eliminating an important source of unwanted zoom resets.
+- Added REMOVE SELECTED PEAK inside Manual Review and connected it to the same deletion handler as the Event Dataset button.
+- Improved reliability of the existing MOVE SELECTED PEAK path by keeping table selection intact while editing the Frame box.
+- Added a compact context/status line showing source file, bodypart, primary axis, and confirmed review count.
+- Added per-frame velocity_3d to peak/timepoint rows. It is calculated from consecutive XYZ displacement divided by elapsed time.
+- Review-session JSON now stores trace layout, palette, zoom, controls, and reviewed events.
+- Added optional "Save review session with export" so CSV/MAT export can also write a separate companion *_peak_session.json file.
+
+Movement Lab
+------------
+- Expanded in-GUI workflow instructions.
+- Automatically proposes the raw-video folder using the loaded 3D CSV recording ID plus paths remembered from Triangulation; manual browsing remains available.
+- Video Inspector now includes a draggable seek bar, -5 s / +5 s controls, and 0.5x / 1x / 1.5x / 2x playback speed.
+- Video cursor timing uses the CSV time_seconds values when available instead of relying only on seconds × nominal FPS.
+- The dashed video cursor stays hidden until video playback/seek provides a real position and ignores duplicate-frame updates to reduce jitter.
+
+Compare Lab
+-----------
+- Renamed "Compact stacked (Anipose-style)" to "Compact stacked".
+- Uses the same named trace palettes as Peak Lab.
+- Full-figure export now supports PNG, SVG, PDF, and interactive HTML.
+- PNG/SVG/PDF use kaleido; interactive HTML does not require kaleido.
+
+Testing / documentation
+-----------------------
+- Added README_v0.5.6_TESTING.txt with focused regression tests for all v0.5.6 changes.
+- Updated Quick Help for triangulation, Peak Lab, Movement Lab, and Compare Lab.

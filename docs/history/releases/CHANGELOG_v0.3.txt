@@ -1,0 +1,32 @@
+Motion Pipeline GUI v0.3
+========================
+
+Peak Lab
+- Peak detection control renamed to Peak mode with clear options:
+  Maximum (top), Minimum (bottom), Both.
+- Maximum/top is the default for a fresh CSV.
+- Both-mode keeps maximum/minimum identity internally for marker rendering,
+  while the event table remains uncluttered.
+- Peak markers use distinct internal colors/shapes for maximum/minimum/manual events.
+- Signal/View, Working Range, Find Peaks, and Manual Review are collapsible panels.
+- Manual Review starts collapsed; Find Peaks stays expanded by default.
+- Wider Peak Lab control column and wrapped Find Peaks controls to prevent squeezing.
+- Working Range simplified to Start, End, SELECT RANGE ON PLOT, APPLY, FULL RANGE.
+- Loading a different CSV clears stale event rows from the previous source.
+
+Help
+- Rewritten into scannable bullet points.
+- Controls use bold "Control: explanation" formatting.
+- Important run/export actions are bold + underlined.
+- Peak Lab help explicitly explains top maxima vs bottom minima.
+
+Theme
+- Light mode preserves the v0.2 Embers styling.
+- Dark mode now uses the user's blue/cream reference palette:
+  background #282840, blue #3882D7, cream #F2EBE5,
+  coral #FFB2AE, plum #AE5283, slate #3C3D5C.
+- Plotly dark-mode colors match the application palette.
+
+Compatibility
+- v0.2 and older Peak Session JSON files remain readable.
+- Removed event-table columns from v0.2 remain omitted.

@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Environments / secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Runtime / logs / temporary settings
+*.log
+*.tmp
+*.temp
+
+# Research data and generated analysis outputs
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.mat
+*.csv
+*.parquet
+*.feather
+*.pickle
+*.pkl
+calibration.toml
+triangulation_batch_report.json
+*_batch_report.json
+
+# Generated visualization / review artifacts
+*.html
+peak_session.json
+*_peak_session.json
+motion_peak_events.csv
+*_OPTIONAL_velocity_cleaned.csv
+
+# Local data/output folders
+data/
+outputs/
+results/
+recordings/
+processed_data/
+raw_data/

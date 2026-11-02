@@ -1,0 +1,62 @@
+Motion Pipeline GUI v0.5.7
+==========================
+
+Final pre-GitHub workflow/UI release based on v0.5.6.3.
+
+1. True parallel backend jobs
+-----------------------------
+- Replaced the single QProcess runner with a multi-job process manager.
+- Passive Reading, Calibration, Triangulation, and Visualization jobs can run concurrently.
+- Multiple jobs from the same stage are also supported.
+- Every job receives its own temporary settings snapshot and QProcess.
+- Console output is tagged by job/stage to keep parallel logs readable.
+- STOP ALL RUNNING terminates every active backend task without blocking the GUI.
+- Completed background jobs no longer overwrite a different draft currently being edited; downstream auto-fill is conservative when parallel work is active.
+
+Important: parallel processes still share CPU, RAM, disk/network bandwidth, and GPU resources. Avoid running jobs that write to the same output files at the same time. Multiple DeepLabCut GPU jobs may also compete for VRAM.
+
+2. Progress redesign
+--------------------
+- The console progress bar now represents aggregate progress across all active backend jobs.
+- Each sidebar stage temporarily shows its own thin progress bar only while that stage has active work.
+- Multiple jobs in the same stage are averaged into that stage bar.
+- Backend scripts now emit standardized progress milestones so the bars advance meaningfully.
+- Opaque library calls (for example Aniposelib camera optimization) may remain at one milestone until that call returns.
+
+3. Console docking restored/improved
+------------------------------------
+- Console remains dockable on left, right, or bottom and can still float.
+- Explicit movable/floatable/closable dock features are restored.
+- Dock nesting/right-corner behavior is enabled.
+- Added DOCK RIGHT and DOCK BOTTOM shortcut buttons inside the console header.
+
+4. Lab panel behavior
+---------------------
+- Compare Lab's left control panel can now collapse fully with the splitter, matching Movement Lab.
+- The existing HIDE CONTROLS / SHOW CONTROLS shortcut remains.
+- All collapsible Peak Lab and Movement Lab sections open expanded by default.
+
+5. Final plotting palettes
+--------------------------
+Only these three named trace palettes remain in Peak Lab and Compare Lab:
+- Coral Grove:  #F14666  #EE8980  #FFCDAA  #9CB998
+- Orchid Dusk:  #313866  #50409A  #964EC2  #FF7BBF
+- Aqua Current: #3E54D3  #4F80E2  #15CDCA  #4FE0B6
+
+Movement Lab intentionally does not expose another palette selector; it uses theme-aware high-contrast trace colors.
+
+6. Theme redesign
+-----------------
+Dark mode:
+- Main/plot background changed to #212226 from the supplied palette reference.
+- Purple/pink accents use the Orchid Dusk family.
+
+Light mode:
+- Main canvas is true white.
+- Controls use restrained Coral Grove accents (rose, peach, sage) with high-contrast charcoal text.
+- Large surfaces are no longer pink/beige/tinted.
+
+7. Deferred by request
+----------------------
+- No new calibration-camera inspection feature was added in this release.
+- GitHub/repository work is intentionally deferred until this revision is tested.

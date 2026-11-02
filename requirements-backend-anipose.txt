@@ -1,0 +1,10 @@
+# Generic package families for the Python environment selected for
+# Calibration / Triangulation / Visualization.
+# Prefer a lab-tested pinned environment when one already works.
+aniposelib
+opencv-contrib-python
+pandas
+numpy
+matplotlib
+plotly
+tables

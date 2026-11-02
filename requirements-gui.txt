@@ -1,0 +1,7 @@
+PySide6>=6.8
+pandas>=2.2
+numpy>=2.0
+scipy>=1.13
+plotly>=5.24
+tables>=3.9
+kaleido>=0.2.1

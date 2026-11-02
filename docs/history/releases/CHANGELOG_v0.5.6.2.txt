@@ -1,0 +1,24 @@
+Motion Pipeline GUI v0.5.6.2
+============================
+
+LIGHT MODE VISUAL REFINEMENT
+----------------------------
+- Replaced the pink/blush v0.5.6.1 light theme with a warm neutral palette.
+- Main light-mode background now uses a lighter tint of #D1C39F (#E8E1CF).
+- Panels use #D1C39F and related warm neutral tints.
+- Primary text/strong controls use #584E3E.
+- Muted blue #85A6B7 is used as a cool interaction accent.
+- Olive #B8AC0C and yellow #EFC110 are reserved for focus/selection/high-attention states rather than large background areas.
+- Inputs and plot canvases use lighter neutral tints for readability.
+- Light-mode default X/Y/Z plot colors now use brown / olive / muted blue rather than the previous pink/purple set.
+- Movement Lab light-mode traces were updated to the same darker warm-neutral/cool-accent family.
+- Dark mode is unchanged.
+
+NO WORKFLOW CHANGES
+-------------------
+All v0.5.6.1 fixes and behavior remain intact, including:
+- Peak Lab primary-trace single-canvas layout
+- fully hideable Peak/Compare control panels and responsive plots
+- exact Movement Lab raw-video recording matching
+- tolerant calibration camera-count detection
+- cleaner existing-output handling for triangulation

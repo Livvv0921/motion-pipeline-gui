@@ -1,0 +1,25 @@
+Motion Pipeline GUI v0.3.1 — backend environment hotfix
+
+Problem fixed
+-------------
+The GUI could be launched from the motion-gui Conda environment and then be told to
+run a backend using another environment's python.exe.  v0.3 inherited the GUI's
+PATH unchanged.  On Windows, that can expose the child process to DLLs from the
+motion-gui environment even though sys.executable points to the Aniposelib/DLC
+environment.  Native packages can import successfully and crash only later when a
+compiled routine loads another DLL.
+
+Changes
+-------
+- QProcess now prepares a Conda-style PATH for the selected backend Python.
+- Selected environment runtime folders are prepended:
+  <env>, Library\\mingw-w64\\bin, Library\\usr\\bin, Library\\bin, Scripts, bin.
+- PATH entries from other named Conda environments are removed for the backend child.
+- CONDA_PREFIX / CONDA_DEFAULT_ENV are set to the selected backend environment.
+- step_runner.py explicitly registers <sys.prefix>\\Library\\bin with
+  os.add_dll_directory() on Windows before importing the scientific backend.
+- Console prints the interpreter/environment it actually prepared.
+- Native negative Windows exit codes are also printed in hexadecimal for diagnosis.
+
+This hotfix does not change calibration mathematics, ChArUco settings, or output
+formats.

@@ -1,0 +1,34 @@
+Motion Pipeline GUI v0.5
+========================
+
+Peak Lab — signal cleanup
+- Added optional short-gap interpolation for bounded internal NaN runs only.
+- Maximum gap length is user-selectable (default 5 frames); longer gaps remain NaN.
+- Added Savitzky–Golay smoothing with window/polyorder controls.
+- Added zero-phase Butterworth low-pass smoothing with cutoff/order controls.
+- Added raw-reference overlay so cleaned traces can be compared against the untouched source.
+- Cleanup is view/detection-only: the loaded CSV is never overwritten.
+
+Peak Lab — review workflow
+- Added explicit draft vs confirmed peak batches.
+- FIND PEAKS creates/replaces the draft for the active bodypart/axis/range.
+- CONFIRM RANGE + CONTINUE locks reviewed peaks, returns to the full graph, and keeps confirmed peaks for later ranges.
+- DISCARD DRAFT removes only the current unconfirmed batch.
+- CSV/MAT export now exports checked, confirmed events; Save Session still preserves drafts.
+- Movement Lab peak counts use confirmed Peak Lab events.
+- Hand tool changed to a robust two-click select/place workflow. In move mode, clicking near a peak can select the nearest peak, so exact marker clicking is not required.
+- Peak marker sizes distinguish draft/selected events and move mode disables Plotly zoom dragging while active.
+
+Compare Lab
+- New Visualization tab for manually combining traces from different dates, conditions, filters, bodyparts, or coordinate axes.
+- Each trace has a custom legend label, source file, bodypart, axis, and optional frame interval.
+- X-axis choices: original frame, elapsed seconds, or relative frame starting at zero.
+- Added user-supplied comparison palette: #054982, #126AAC, #1C7DD5, #F09778, #FF9AB6.
+- Gradient choices: full blue→coral→pink, blue-only, or warm coral→pink.
+- Interactive Plotly overlay plus PNG export of the current embedded view.
+
+Help
+- Updated Quick Help for signal cleanup, range confirmation, the hand tool, and Compare Lab.
+
+Compatibility
+- Preserves v0.3.1 backend environment isolation and all v0.4/v0.4.1 workflow features.

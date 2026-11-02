@@ -1,0 +1,29 @@
+Motion Pipeline GUI v0.5.6.3
+============================
+
+Light mode contrast / blue visibility
+-------------------------------------
+- Light-mode large surfaces moved from beige to a much lighter warm off-white.
+- Text is substantially darker for stronger contrast.
+- Muted blue is now visibly used for primary/run buttons, selected navigation/tabs,
+  section borders, utility/title accents, focus states, and selection backgrounds.
+- Mustard/olive remains a secondary highlight rather than a dominant surface color.
+- Plot backgrounds were lightened and grid/text contrast increased.
+- Movement Lab keeps theme-aware traces with a stronger muted-blue Z trace.
+
+Peak Lab selection / Manual Review
+----------------------------------
+- Enabling SELECT / MOVE PEAK automatically enables Hover details.
+- Plot-selected peaks and table-selected rows now share one selected-event UID.
+- The selected peak is enlarged immediately in-place without rebuilding the plot,
+  preserving the user's zoom window.
+- Manual Review > MOVE SELECTED PEAK works from either a clicked plot peak or a
+  selected Event Dataset row.
+- Manual Review > REMOVE SELECTED PEAK uses the same unified selection state and
+  no longer depends on the Event Dataset REMOVE SELECTED button.
+- Table rebuilds restore the currently selected peak row when possible.
+- Move-mode helper text now reflects the simpler click-peak workflow.
+
+Dark mode
+---------
+- No intentional visual redesign to dark mode.

@@ -1,0 +1,45 @@
+Motion Pipeline GUI v0.4
+========================
+
+Peak Lab
+--------
+- Left control column is now vertically scrollable; collapsible sections can all remain open.
+- Working Range now supports SELECT RANGE ON PLOT and USE CURRENT ZOOM; selection uses Plotly x-boundaries directly.
+- Range summary shows frame/time boundaries, duration, and kept-peak count.
+- Visible-trace behavior is more intuitive: when only one trace remains, it becomes the detection/primary axis.
+- Added UNDO LAST and CLEAR THIS AXIS for peak-finding review.
+- Added moon-phase busy/status indicator plus wait cursor during find/update/render stages.
+- Plotly.js is cached locally instead of embedded into every redraw, reducing repeated Peak Lab refresh overhead.
+- Peak dots can be clicked to select their table row directly.
+- Added a plot-header hand tool: select a peak and click the corrected frame. Experimental direct horizontal point dragging is also wired when the embedded Plotly/Qt build exposes SVG peak markers.
+- Existing Manual Review controls remain as a fallback.
+- Added MATLAB .mat export for kept peak events.
+
+Movement Lab (new)
+------------------
+- New MOVEMENT LAB tab beside PEAK LAB.
+- Scrollable/collapsible controls patterned after Peak Lab.
+- User-editable movement protocol/order with a remembered default. Only "Shoulder flexion / extension" is prefilled from the current known protocol; remaining items are placeholders until edited.
+- Select bounded movement windows from the plot or current Plotly zoom.
+- Movement-level dataset stores movement label, set number, sequence position, outcome, boundaries, duration, peak count, and 3D kinematic summary metrics.
+- Optional generic signal-extrema / phase-order calculation (min->max or max->min). It deliberately does not claim anatomical flexion/extension from incomplete landmarks.
+- Floating Video Inspector supports Cam-0...Cam-N discovery from an exact raw recording folder.
+- Optional video-follow cursor moves vertically across the Movement Lab plot while video plays/seeks.
+- Timeline/range slider is available below the plot.
+- CSV and MATLAB .mat exports plus Movement Lab JSON sessions.
+
+Triangulation
+-------------
+- Exact raw recording folder is now the primary source-video input for timestamps/FPS.
+- Parent raw-video root remains as an advanced fallback only.
+- 3D Settings group is vertically scrollable on smaller screens.
+- Quick Help now explains how to locate the Aniposelib environment python.exe.
+
+Console / drafts
+----------------
+- Backend console is now a QDockWidget: drag it to the left, right, or bottom, or float it as a separate window.
+- Added NEW DRAFT. It clears remembered trial/model/file history and rebuilds the workflow while preserving UI theme, backend Python interpreters, camera count, and remembered Movement Lab protocol.
+
+Environment handling
+--------------------
+- Retains the v0.3.1 Conda/native-DLL environment-isolation hotfix for backend processes.

@@ -1,0 +1,25 @@
+Motion Pipeline GUI v0.5.4 — Classic Peak Lab / Reliable Manual Review
+
+UI / aesthetics
+- Reverted Peak Lab to the v0.5.2 Plotly/QWebEngine layout and appearance.
+- Restored the original control locations, graph styling, compact top-right tools, and event table layout.
+- Removed the v0.5.3 Matplotlib canvas and oversized Matplotlib toolbar from Peak Lab.
+- No new visible controls were added.
+
+Data loading
+- Restored the v0.5.2 data-loading/rendering path.
+- Loading is now committed separately from plot rendering, so a graph-render error cannot make a valid CSV appear to have failed to load.
+
+Reliable manual correction
+- Guaranteed path no longer requires clicking a Plotly peak marker.
+- Select exactly one EVENT DATASET row.
+- The existing MANUAL REVIEW > Frame box automatically receives that event's current frame.
+- Type the corrected destination frame.
+- Press the existing MOVE SELECTED PEAK button.
+- Peak Lab snaps to the nearest real source frame and updates frame, time_seconds, timestamp, X, Y, Z, primary value, and event origin together.
+- The selected event remains highlighted on the graph.
+- The existing top-right hand button remains in its original location/style and now guides this reliable row + Frame workflow.
+- A normal graph click can still fill the Frame box when Plotly click events are available, but movement does not depend on graph clicking.
+
+Manual add
+- ADD MANUAL FRAME is unchanged: enter a frame in the existing Frame box and press the button.

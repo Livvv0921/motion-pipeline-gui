@@ -1,0 +1,70 @@
+name: Bug report
+description: Report a reproducible Motion Pipeline GUI issue
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: page
+    attributes:
+      label: Area
+      options:
+        - Passive Reading
+        - Calibration
+        - Triangulation
+        - Visualization
+        - Peak Lab
+        - Movement Lab
+        - Compare Lab
+        - Console / layout / theme
+        - Installation / environment
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: GUI version
+      placeholder: v0.5.7
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: Tell us what you clicked/selected and in what order.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Relevant console output
+      render: shell
+
+  - type: input
+    id: os
+    attributes:
+      label: OS / workstation
+      placeholder: Windows 11 / macOS ...
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes or screenshots
+      description: Remove sensitive paths, identifiers, or unpublished data before posting.
